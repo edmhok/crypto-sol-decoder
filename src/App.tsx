@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
 import NotFound from "./pages/OtherPage/NotFound";
@@ -18,7 +18,11 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Dashboard from "./pages/Dashboard/Home";
-import Home from "./pages/PublicHome";
+import Home from "./pages/Home/home";
+import Features from "./pages/Home/Features";
+import Team from './pages/Home/Team';
+import FAQ from './pages/Home/FAQ';
+import Roadmap from './pages/Home/Roadmap';
 
 export default function App() {
   return (
@@ -27,6 +31,10 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           <Route index path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/faq" element={<FAQ />} />
 
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
